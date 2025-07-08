@@ -20,4 +20,23 @@ def playgame():
         max_number = 10
         attempts = 5
 
+    secret_number = random.randint(1,max_number)
+    
+    while attempts > 0
+        guess = input(f'Guess a number between 1 and {max_number}') 
+       
+        if not guess.isidigit():  # Validation check to ensure user enters a number
+            print(' Please enter a valid number: ')
+            continue
+       
+        guess = int(guess)
+        if guess == secret_number:
+            print('You guessed it!')
+        elif guess > secret_number:
+            print('Too big')
+        else:
+            print('Too small')
+        
+        attempts-=1
+
 playgame()
