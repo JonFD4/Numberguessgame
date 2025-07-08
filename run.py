@@ -22,10 +22,10 @@ def playgame():
 
     secret_number = random.randint(1,max_number)
     
-    while attempts > 0
-        guess = input(f'Guess a number between 1 and {max_number}') 
+    while attempts > 0:
+        guess = input(f'Guess a number between 1 and {max_number}: ') 
        
-        if not guess.isidigit():  # Validation check to ensure user enters a number
+        if not guess.isdigit():  # Validation check to ensure user enters a number
             print(' Please enter a valid number: ')
             continue
        
@@ -38,5 +38,12 @@ def playgame():
             print('Too small')
         
         attempts-=1
+    if attempts == 0:
+        print(f'You are out of tries ! The number was {secret_number}')
 
-playgame()
+while True:
+    playgame()
+    replay = input('Do you want to play again? y/n: ').lower()
+    if replay != 'y':
+        print('Thanks for playing!')
+        break
